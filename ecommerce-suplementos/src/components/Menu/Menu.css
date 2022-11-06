@@ -1,0 +1,28 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+.barra{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    background-color: lightskyblue;
+    align-items: center;
+    justify-content: space-between;
+   
+}
+
+.barra ul{
+    list-style: none;
+    margin: 0 20px;
+    text-decoration: none;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.2rem;
+}
+
+
+.carro{
+    width: 50px;
+}
