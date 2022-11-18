@@ -1,55 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
-import Menu from './components/Menu/Menu'
-import ItemListContainer from './components/ItemListContainer'
-
-function Titulo ({titulo, subtitulo}) {
-
-
-  return (
-    <div>
-      <h2>{titulo}</h2>
-      <h3>{subtitulo}</h3>
-    </div>
-  ) 
-  }
+import Menu from './components/Menu/Menu.jsx'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import ItemDetailContainer from './pages/ItemDetailContainer/ItemDetailContainer'
+import Cart from './pages/Cart/Cart'
+//import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  let tituloApp = 'Hola soy titulo de app'
-  let subtituloApp = 'Hola soy subtitulo de app'
-  let tituloForm = 'Hola soy titulo de form'
+  console.log('App')
 
+   // estan las llamadas a las api
 
-return (
-  <div>
-    <Menu />
-    <Titulo titulo='titulo de App' subtitulo='sub de app' />
+   const saludo = 'saludando' // estado
 
-  <form>
-    <Titulo
-    titulo={tituloApp}
-    subtitulo={subtituloApp}
-    />
-    <input type="text" placeholder='ingrese nombre' />
-    <br />
-    <input type="text" placeholder='ingrese apellido' />
-  </form>
-   
-  <section>
-    <Titulo
-    titulo='titulo de section'
-    subtitulo='sub de section'
-    />
-    <h2>Titulo de section</h2>
-    <p>Parrafo de section</p>
-    <ItemListContainer greeting={'bienvenido'} />
-  </section>
-  </div>
+   const saludar = () => {
+       console.log('hola soy app')
+   } 
 
+   return (
+       // Me da el contexto para poder usar todas las funciones de la librería
+       <BrowserRouter> 
+           <Menu  />    
+           <Routes>
+               <Route path='/' element={<ItemListContainer greeting={saludo} saludar={ saludar } />} />
+               <Route path='/categoria/:categoriaId' element={<ItemListContainer greeting={saludo} saludar={ saludar } />} />
+               <Route path='/detail/:productId' element={<ItemDetailContainer />} />
+               <Route path='/cart'  element={<Cart />}/>
+               {/* <Route path='/404Notfound' element={<NotFound404 />} />   */}
 
-
-)
+               <Route path='*' element={<Navigate to='/' />} />             
+           </Routes>
+       </BrowserRouter>
+   )
 }
 
 
