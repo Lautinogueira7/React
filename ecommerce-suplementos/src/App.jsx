@@ -7,8 +7,7 @@ import Cart from './pages/Cart/Cart'
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  console.log('App')
-
+  
    // llamadas a las api
 
    const saludo = 'saludando' // estado

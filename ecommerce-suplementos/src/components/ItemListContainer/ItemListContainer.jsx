@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { gFetch } from '../../utils/gFetch'
-
+import '../style.css'
 
 
 const ItemListContainer = (obj) => {
@@ -38,17 +38,17 @@ return(
         <h2>Cargando...</h2>
     :
         <div>
-            <h1>ItemListContainer</h1>  
+            <h1>Listado de productos</h1>  
                     {/* <button onClick={cambiarEstado}>cambiar estado</button>    */}
                     
-                    { products.map( obj =>  <div key={obj.id} className='card w-50 mt-1'>
+                    { products.map( obj =>  <div key={obj.id} className='card'>
                                                 <Link to={`/detail/${obj.id}`}>
                                                     <div className='card-header'>
                                                         {obj.name}
                                                     </div>
                                                     <div className='card-body'>
                                                         <center>
-                                                            <img src={obj.foto} className="w-50" />
+                                                            <img src={obj.foto} className="img-fluid" />
                                                         </center>
                                                     </div>
                                                     <div className='card-footer'>

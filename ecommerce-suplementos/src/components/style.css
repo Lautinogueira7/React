@@ -1,0 +1,22 @@
+.card{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 10px;
+    width: 20rem;
+    padding: 2px 16px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+    background-color: white;
+}
+
+.card body{
+    flex: auto;
+    padding: 0.1rem;
+}
+
+.img-fluid{
+    height: 175px;
+}
