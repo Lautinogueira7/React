@@ -9,16 +9,16 @@ import Cart from './pages/Cart/Cart'
 function App() {
   console.log('App')
 
-   // estan las llamadas a las api
+   // llamadas a las api
 
    const saludo = 'saludando' // estado
 
    const saludar = () => {
-       console.log('hola soy app')
+       
    } 
 
    return (
-       // Me da el contexto para poder usar todas las funciones de la librería
+       //  funciones de la librería
        <BrowserRouter> 
            <Menu  />    
            <Routes>
